@@ -12,6 +12,7 @@ function generateMarkdown(data) {
 
   let badge
 
+  // If statements to insert badges depending on selection
   if (license === "MIT") {
 
     badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
@@ -51,17 +52,16 @@ function generateMarkdown(data) {
   }
 
 
+// Generate readme content
+  let readme = `# ${title} ${badge}\n## Table of Contents\n* [Description](#description)\n* [Installation Instructions](#installation-instructions)\n* [Usage](#usage)\n* [Contributing](#contributing) \n* [Tests](#tests)\n* [License](#license)\n* [Questions](#questions)\n## Description\n${description}\n## Installation Instructions\n${install}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${licenseText}\n## Questions\n* https://github.com/${github}\n* Email: ${email}`;
 
-  let readme = `# ${title} ${badge}\n## Description\n${description}\n## Installation Instructions\n${install}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${licenseText}\n## Questions\n* https://github.com/${github}\n* Email: ${email}`;
-
-
+// Create a readme file
   fs.writeFile('generated-readme.md', readme, (err) => {
     if (err) {
       console.log("Error");
     }
     else {
       console.log("Readme generated!")
-      //can change
     }
   });
 
