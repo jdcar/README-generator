@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generate = require('/utils/generateMarkdown.js')
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // array of questions for user
 
@@ -57,7 +57,6 @@ const questions = [
 ]
 
 
-writeToFile()
 
 
 
@@ -71,8 +70,14 @@ function writeToFile(fileName, data) { // original
     .prompt(questions)
     .then((data) => {
 
-        console.log(data.title, data.description)
-        console.log("write to file")
+
+        console.log(generateMarkdown(data))
+
+        // fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+        //     if (err) throw err;
+        //     console.log('Saved!');
+        //   });
+
     })
 
 
@@ -81,6 +86,7 @@ function writeToFile(fileName, data) { // original
 
 // function to initialize program
 function init() { // original
+    writeToFile()
 
 } // original
 

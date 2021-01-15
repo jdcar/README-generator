@@ -1,6 +1,11 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}`; 
+
+  const { title, description, install, usage, contributing, tests, license, github, email } = data
+
+  // return `# ${data.title}`; 
+  console.log("Generate Markdown passed")
+  console.log(title)
 
     // THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 
