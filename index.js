@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // array of questions for user
@@ -41,7 +40,12 @@ const questions = [
         type: 'checkbox',
         message: 'License',
         name: "license",
-        choices: ['MIT', 'Other']
+        choices: ['MIT', 'ISC', 'Apache License 2.0', 'GNU General Public License v3.0', 'The Unlicense', 'Other']
+    },
+    {
+        type: 'input',
+        message: 'Name',
+        name: "name",
     },
     {
         type: 'input',
@@ -62,23 +66,16 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) { // original
-    // fs.writeFile('README.md', data, function (err) {
-    //     if (err) throw err;
-    //     console.log('Saved!');
-    //   });
+
     inquirer
-    .prompt(questions)
-    .then((data) => {
+        .prompt(questions)
+        .then((data) => {
 
 
-        console.log(generateMarkdown(data))
+            console.log(generateMarkdown(data))
 
-        // fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
-        //     if (err) throw err;
-        //     console.log('Saved!');
-        //   });
 
-    })
+        })
 
 
 

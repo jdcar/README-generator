@@ -1,26 +1,73 @@
 // function to generate markdown for README
+const fs = require('fs');
+var d = new Date();
+var year = d.getFullYear();
+
+
 function generateMarkdown(data) {
 
-  const { title, description, install, usage, contributing, tests, license, github, email } = data
+  let { title, name, license, description, install, usage, contributing, tests, github, email } = data
 
-  // return `# ${data.title}`; 
-  console.log("Generate Markdown passed")
-  console.log(title)
+  license = license.toString()
 
-    // THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+  let badge
 
-    // THEN this is displayed as the title of the README
+  if (license === "MIT") {
 
-    // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+    badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
 
-    // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+    licenseText = `${license}. Copyright (c) ${year} ${name}`
 
-    // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
 
-    // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+  } else if (license === "ISC") {
 
-    // THEN I am taken to the corresponding section of the README
+    badge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
+
+
+    licenseText = `${license}. Copyright (c) ${year} ${name}`
+
+  } else if (license === "Apache License 2.0") {
+
+    badge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+
+    licenseText = `${license}. Copyright (c) ${year} ${name}`
+
+
+  } else if (license === "GNU General Public License v3.0") {
+    badge =  `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+
+    licenseText = `${license}. Copyright (c) ${year} ${name}`
+
+
+  } else if (license === "The Unlicense") {
+
+    badge = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
+
+    licenseText = `${license}. Copyright (c) ${year} ${name}`
+
+
+  } else if (license === "Other") {
+    badge = `No license selected`
+  }
+
+
+
+  let readme = `# ${title} ${badge}\n## Description\n${description}\n## Installation Instructions\n${install}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${licenseText}\n## Questions\n* https://github.com/${github}\n* Email: ${email}`;
+
+
+  fs.writeFile('generated-readme.md', readme, (err) => {
+    if (err) {
+      console.log("Error");
+    }
+    else {
+      console.log("Readme generated!")
+      //can change
+    }
+  });
 
 }
+
+
+
 
 module.exports = generateMarkdown;
