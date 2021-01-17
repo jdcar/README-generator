@@ -3,8 +3,6 @@
 * [Description](#description)
 * [Installation Instructions](#installation-instructions)
 * [Usage](#usage)
-* [Contributing](#contributing) 
-* [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
 ## Description
