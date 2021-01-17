@@ -1,4 +1,13 @@
 # Readme Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Jamie Carlstone
+- 09 - Node
+- January 19, 2021
+
+* https://github.com/jdcar/README-generator
+
+
+
 ## Table of Contents
 * [Description](#description)
 * [Installation Instructions](#installation-instructions)
@@ -25,3 +34,9 @@ Or, follow these instructions:
 MIT. Copyright (c) 2021 Jamie Carlstone
 ## Questions
 * https://github.com/jdcar
+
+## Screenshots
+* ![screenshot1](img\run-program.JPG "Run program")
+* ![screenshot2](img\readme-created.JPG "After program created")
+* ![screenshot3](img\readme-file.JPG "README file")
+
