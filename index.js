@@ -65,7 +65,7 @@ const questions = [
 
 
 // function to write README file
-function writeToFile(fileName, data) { // original
+function writeToFile(fileName, data) { 
 
     inquirer
         .prompt(questions)
@@ -79,13 +79,13 @@ function writeToFile(fileName, data) { // original
 
 
 
-} // original
+} 
 
 // function to initialize program
-function init() { // original
+function init() { 
     writeToFile()
 
-} // original
+} 
 
 // function call to initialize program
-init(); // original
+init(); 
