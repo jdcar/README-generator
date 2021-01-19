@@ -38,7 +38,7 @@ MIT. Copyright (c) 2021 Jamie Carlstone
 * https://github.com/jdcar
 
 ## Screenshots
-* ![screenshot1](img\run-program.JPG "Run program")
-* ![screenshot2](img\readme-created.JPG "After program created")
-* ![screenshot3](img\readme-file.JPG "README file")
+* ![Run program](.\img\run-program.JPG "Run program")
+* ![After program created](.\img\readme-created.JPG "After program created")
+* ![README file](.\img\readme-file.JPG "README file")
 
