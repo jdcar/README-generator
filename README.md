@@ -14,6 +14,8 @@ Jamie Carlstone
 * [Usage](#usage)
 * [License](#license)
 * [Questions](#questions)
+* [Screenshots](#screenshots)
+
 ## Description
 This command line program creates a readme file with all the needed sections.
 ## Installation Instructions
